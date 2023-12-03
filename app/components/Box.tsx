@@ -7,7 +7,9 @@ interface BoxPros {
 }
 const Box: React.FC<BoxPros> = ({ children, classname }) => {
   return (
-    <div className={twMerge(`bg-neutral-900 rounded-lg h-fit w-full`)}>
+    <div
+      className={twMerge(`bg-neutral-900 rounded-lg h-fit w-full`, classname)}
+    >
       {children}
     </div>
   );
