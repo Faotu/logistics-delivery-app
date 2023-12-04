@@ -48,7 +48,7 @@ const LeftDeliveries: React.FC<LeftDeliveriesProps> = ({ children }) => {
       gap-y-2
       bg-black
       h-full
-      w-[300px]
+      w-[600px]
       p-2"
       >
         <Box>
