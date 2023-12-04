@@ -25,7 +25,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ children, className }) => {
         <div className="hidden md:flex gap-x-2 items-center">
           <FcPlanner
             size={36}
-            className="hover:text-white cursor-pointer transition text-neutral-400"
+            className=" cursor-pointer transition text-neutral-400"
           />
           <p className="text-lg hover:text-white cursor-pointer transition text-neutral-400">
             Planner
@@ -36,11 +36,22 @@ const MainHeader: React.FC<MainHeaderProps> = ({ children, className }) => {
         <div className="flex justify-between items-center gap-x-4">
           <>
             <div>
-              <Button>Sign up</Button>
+              <Button
+                onClick={() => {}}
+                className=" text-neutral-300 font-medium"
+              >
+                Sign up
+              </Button>
+            </div>
+            <div>
+              <Button onClick={() => {}} className="bg-white px-6 py-2">
+                Log in
+              </Button>
             </div>
           </>
         </div>
       </div>
+      {children}
     </div>
   );
 };
