@@ -11,7 +11,7 @@ export default function Home() {
               Welcome to delivery planner
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4 ">
-              <SlotItems />
+              <SlotItems date="date" />
             </div>
           </div>
         </MainHeader>
