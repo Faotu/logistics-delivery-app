@@ -5,6 +5,9 @@ import { FcPlanner } from "react-icons/fc";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
+import useAuthModal from "@/hooks/useAuthModal";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useUser } from "@/hooks/useUser";
 interface MainHeaderProps {
   children: React.ReactNode;
   className?: string;
@@ -12,8 +15,14 @@ interface MainHeaderProps {
 
 const MainHeader: React.FC<MainHeaderProps> = ({ children, className }) => {
   const router = useRouter();
+  const authModal = useAuthModal();
 
-  const handleLogout = () => {};
+  const supabaseClient = useSupabaseClient();
+  const { user } = useUser();
+
+  const handleLogout = async () => {
+    const { error } = await supabaseClient.auth.signOut();
+  };
   return (
     <div
       className={twMerge(
@@ -37,14 +46,14 @@ const MainHeader: React.FC<MainHeaderProps> = ({ children, className }) => {
           <>
             <div>
               <Button
-                onClick={() => {}}
+                onClick={authModal.onOpen}
                 className=" text-neutral-300 font-medium"
               >
                 Sign up
               </Button>
             </div>
             <div>
-              <Button onClick={() => {}} className="bg-white px-6 py-2">
+              <Button onClick={authModal.onOpen} className="bg-white px-6 py-2">
                 Log in
               </Button>
             </div>
