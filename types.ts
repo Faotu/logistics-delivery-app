@@ -1,7 +1,7 @@
-import { metadata } from "./app/layout";
+// import { metadata } from "./app/layout";
 import Stripe from "stripe";
 
-export interface Song {
+export interface Planner {
   id: string;
   user_id: string;
   author: string;
