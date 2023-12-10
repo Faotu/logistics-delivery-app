@@ -9,6 +9,7 @@ import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
+import { toast } from "react-hot-toast";
 interface MainHeaderProps {
   children: React.ReactNode;
   className?: string;
@@ -26,7 +27,9 @@ const MainHeader: React.FC<MainHeaderProps> = ({ children, className }) => {
     router.refresh();
 
     if (error) {
-      console.log(error);
+      toast.error(error.message);
+    } else {
+      toast.success("Logged out!!!");
     }
   };
   return (

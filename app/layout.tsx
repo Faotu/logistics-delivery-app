@@ -4,6 +4,7 @@ import "./globals.css";
 import LeftDeliveries from "./components/LeftDeliveries";
 import SupabaseProvider from "@/providers/SupabaseProvider";
 import ModalProvider from "@/providers/ModalProvider";
+import ToasterProvider from "@/providers/ToastProvider";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ToasterProvider />
         <SupabaseProvider>
           <SupabaseProvider>
             <ModalProvider />
