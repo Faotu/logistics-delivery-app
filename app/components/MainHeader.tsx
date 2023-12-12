@@ -5,10 +5,10 @@ import { FaUserAlt } from "react-icons/fa";
 import { FcPlanner } from "react-icons/fc";
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import { useUser } from "@/hooks/useUser";
 import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { useUser } from "@/hooks/useUser";
 import { toast } from "react-hot-toast";
 interface MainHeaderProps {
   children: React.ReactNode;

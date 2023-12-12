@@ -5,6 +5,7 @@ import LeftDeliveries from "./components/LeftDeliveries";
 import SupabaseProvider from "@/providers/SupabaseProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToastProvider";
+import UserProvider from "@/providers/UserProvider";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -23,10 +24,10 @@ export default function RootLayout({
       <body className={font.className}>
         <ToasterProvider />
         <SupabaseProvider>
-          <SupabaseProvider>
+          <UserProvider>
             <ModalProvider />
             <LeftDeliveries>{children}</LeftDeliveries>
-          </SupabaseProvider>
+          </UserProvider>
         </SupabaseProvider>
       </body>
     </html>
