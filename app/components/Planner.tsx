@@ -3,10 +3,21 @@
 import React from "react";
 import { BiCustomize } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
+import useAuthModal from "@/hooks/useAuthModal";
+import { useUser } from "@/hooks/useUser";
+import useUploadModal from "@/hooks/useUploadModal";
 
 const Planner = () => {
+  const authModal = useAuthModal();
+  const uploadModal = useUploadModal();
+  const { user } = useUser();
+
   const onClick = () => {
-    // create slots
+    // If there is no user then call the registration modal
+    if (!user) {
+      return authModal.onOpen();
+    }
+    return uploadModal.onOpen();
   };
   return (
     <div className="flex flex-col">
